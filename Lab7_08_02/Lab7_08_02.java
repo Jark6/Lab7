@@ -12,8 +12,12 @@
 package Lab7_08_02;
 
 public class Lab7_08_02 {
-    superClassTest mytest1 = new superClassTest("потестим");
-    mytest1.toString()
+    superClassTest myTest0 = new superClassTest();
+    String superClassTest0 = myTest0.toString();
+    System.out.println(superClassTest0);
+    superClassTest mytest1 = new superClassTest("test this");
+    String superClassTest1 = mytest1.toString();
+    System.out.println(superClassTest1);
     //mytest1.setStr1("notest");
     //mytest1.getStr1();
     //mytest1.getStr1length();
