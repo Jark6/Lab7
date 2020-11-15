@@ -7,7 +7,7 @@
 package Lab7_08_01;
 
 public class superClassTest {
-    //закрытое текстовое поле
+    //приватное текстовое поле
     private String str1;
 
     //конструктор с текстовым аргументом
@@ -16,13 +16,16 @@ public class superClassTest {
     }
 
     superClassTest() {
+        this.str1 = "нет параметров";
     }
 
     //@Override - аннотация указываемая для того, чтобы показать что далее мы собираемся переопределять метод суперкласса
   @Override
     public String toString() {
         String superClassNameAndFieldValue;
-        superClassNameAndFieldValue = "super" + "\n" + " Class name: " + this.getClass().getSimpleName() + "\n" + " str 1 = " + this.getStr1();
+        superClassNameAndFieldValue = "super" + "\n" +
+                " Class name: " + this.getClass().getSimpleName() + "\n" +
+                " str 1 = " + this.getStr1();
         return superClassNameAndFieldValue;
     }
 
