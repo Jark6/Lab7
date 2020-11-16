@@ -17,19 +17,18 @@ public class FirstSupClass {
     FirstSupClass(char char1){
         this.setChar1(char1);
     }
-    FirstSupClass(FirstSupClass p){
-        this(p.char1);
-    }
+    //конструктор копии
+    FirstSupClass(FirstSupClass copy){ this.setChar1(copy.char1); }
 
 @Override
     public String toString() {
         String ClassNameAndFieldValue;
         ClassNameAndFieldValue =
                 " Class name: " + this.getClass().getSimpleName() + "\n" +
-                " int 1 = " + this.getChar1();
+                " char 1 = " + this.getChar1();
         return ClassNameAndFieldValue;
     }
-    public int getChar1() {
+    public char getChar1() {
         return char1;
     }
 }

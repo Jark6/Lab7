@@ -1,29 +1,40 @@
+/*
+в каждом из классов должен быть конструктор,
+позволяющий создавать объект на основе значений полей,
+переданных аргументами конструктору,
+а также конструктор создания копии.
+ */
 package Lab7_08_04;
 //на основе подкласса создается еще один подкласс
 public class ThirdSubClass extends SecondSubClass {
-    ThirdSubClass(int int1) {
-        super(int1);
+    ThirdSubClass(char char1) {
+        super(char1);
     }
-    //В третьем классе появляется открытое текстовое ноле
-    public String str2;
-    //метод с тремя аргументами для присваивания значений полям (перегрузка метода из суперкласса)
-    public void setInt1Str1Str2(int int1, String str1, String str2) {
-        super.int1 = int1;
+    //Во третьем классе появляется открытое целочисленное поле
+    public int int1;
+
+    public void setChar1Str1Int1(char char1, String str1, int int1) {
+        super.char1 = char1;
         super.str1 = str1;
-        this.str2 = str2;
+        this.int1 = int1;
     }
-    //конструктор с тремя параметрами
-    ThirdSubClass(int int1, String str1, String str2) {
-        super(int1);
-        setInt1Str1Str2(int1, str1, str2);
+    //original конструктор
+    ThirdSubClass(char char1, String str1, int int1) {
+        super(char1,str1);
+       setChar1Str1Int1(super.char1, super.str1, int1);
+    }
+    //конструктор копии
+    ThirdSubClass(ThirdSubClass copy) {
+        super(copy.char1, copy.str1);
+        this.setChar1Str1Int1(copy.char1, copy.str1, copy.int1);
     }
 
     public String toString() {
         String ThirdFieldValue =
-                "\n str 2 = " + this.getStr2();
+                "\n str 2 = " + this.getInt1();
         return super.toString()+ThirdFieldValue;
     }
-    public String getStr2() {
-        return str2;
+    public int getInt1() {
+        return int1;
     }
 }
